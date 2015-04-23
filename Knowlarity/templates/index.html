@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Home - Knowlarity</title>
+</head>
+
+<body>
+
+<br><br><br><br>
+<form action="." method = "POST" > {% csrf_token %}
+    URL : <input type="text" name="urls" value=""><br><br>
+    URL : <input type="text" name="urls" value=""><br><br>
+    URL : <input type="text" name="urls" value=""><br><br>
+    URL : <input type="text" name="urls" value=""><br><br>
+          <input type="submit" value="Submit">
+</form>
+
+<br><br><br>
+
+<form action="." method = "POST" enctype = "multipart/form-data" > {% csrf_token %}
+    Upload File : <input type="file" name = "files" value=""><br><br>
+          <input type="submit" value="Submit">
+</form>
+
+
+<br><br><br>
+
+{% if urls_dict %}
+    <table style="width:60%">
+        <tr>
+            <td>URL</td>
+            <td>Response</td>
+        </tr>
+        {% for k,v in urls_dict.items %}
+            <tr>
+                <td>{{k}}</td>
+                <td>{{v}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+</body>
+
+</html>
