@@ -1,0 +1,3 @@
+http://www.dotnetperls.com/file-python
+http://pymbook.readthedocs.org/en/latest/file.html
+http://www.diveintopython.net/file_handling/
